@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -yq unzip apt-utils wget binutils gosu && 
     # PLACEHOLDER FOR TK5 ARCHIVE
     # Replace the URL below with your GitHub repository release download link
     # ==============================================================================
-    wget -O tk5_current.zip https://github.com/YOUR_USER/YOUR_REPO/releases/download/v1.0/tk5_current.zip && \
+    wget -O tk5_current.zip https://github.com/bigdale123/tk5-docker/releases/download/update-5/mvs-tk5.zip && \
     unzip tk5_current.zip && \
     rm -f /tk5/tk5_current.zip && \
     # Remove unused OS platform binaries bundled in the archive

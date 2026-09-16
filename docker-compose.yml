@@ -1,0 +1,19 @@
+services:
+  tk5:
+    build: .
+    image: tk5-docker:local
+    container_name: mvs-tk5
+    restart: unless-stopped
+    volumes:
+      - ./tk5-conf:/tk5/conf
+      - ./tk5-local_conf:/tk5/local_conf
+      - ./tk5-local_scripts:/tk5/local_scripts
+      - ./tk5-prt:/tk5/prt
+      - ./tk5-dasd:/tk5/dasd
+      - ./tk5-pch:/tk5/pch
+      - ./tk5-jcl:/tk5/jcl
+      - ./tk5-log:/tk5/log
+      - ./temp-files:/temp-files
+    ports:
+      - "3270:3270" # 3270 Terminal Port
+      - "8038:8038" # Hercules Web Console
