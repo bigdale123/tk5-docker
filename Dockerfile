@@ -6,12 +6,8 @@ RUN apt-get update && apt-get install -yq unzip apt-utils wget binutils gosu && 
     useradd -u 1000 -g 1000 -m -s /bin/bash tk5 && \
     mkdir /tk5 && \
     cd /tk5 && \
-    # ==============================================================================
-    # PLACEHOLDER FOR TK5 ARCHIVE
-    # Replace the URL below with your GitHub repository release download link
-    # ==============================================================================
     wget -O tk5_current.zip https://github.com/bigdale123/tk5-docker/releases/download/update-5/mvs-tk5.zip && \
-    unzip tk5_current.zip && \
+    unzip tk5_current.zip -d /tk5/ && \
     rm -f /tk5/tk5_current.zip && \
     # Remove unused OS platform binaries bundled in the archive
     rm -rf /tk5/hercules/darwin && \
