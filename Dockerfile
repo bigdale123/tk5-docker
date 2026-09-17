@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -yq unzip apt-utils wget binutils gosu && 
     rm -rf /var/lib/apt/lists/* && \
     # Keep copy of default files to seed volume mounts on first container run
     mkdir -p /tk5-defaults && \
-    cp -r /tk5/conf /tk5/local_conf /tk5/local_scripts /tk5/prt /tk5/dasd /tk5/pch /tk5/jcl /tk5/log /tk5-defaults/
+    cp -r /tk5/conf /tk5/local_conf /tk5/local_scripts /tk5/prt /tk5/dasd /tk5/pch /tk5/jcl /tk5/log /tk5-defaults/ && \
     # Grant full execution permissions and ownership across the entire install tree
     chmod -R +x /tk5 /tk5-defaults && \
     chown -R 1000:1000 /tk5 /tk5-defaults && \
