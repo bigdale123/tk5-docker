@@ -2,8 +2,7 @@ FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -yq unzip apt-utils wget binutils gosu && \
-    groupadd -g 1000 tk5 && \
-    useradd -u 1000 -g 1000 -m -s /bin/bash tk5 && \
+    useradd -u 1000 -g 1000 -m -s /bin/bash tk5 2>/dev/null || usermod -l tk5 -d /home/tk5 -m ubuntu && \
     mkdir /tk5 && \
     cd /tk5 && \
     wget -O tk5_current.zip https://github.com/bigdale123/tk5-docker/releases/download/update-5/mvs-tk5.zip && \
